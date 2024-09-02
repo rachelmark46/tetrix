@@ -17,7 +17,7 @@ class SplashScreenPageState extends State<SplashScreenPage> {
     super.initState();
     Timer(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => MyApp()),
+        MaterialPageRoute(builder: (_) => GamePage()),
       );
     });
   }
@@ -33,7 +33,7 @@ class SplashScreenPageState extends State<SplashScreenPage> {
           children: [
             // Logo image
             Image.asset(
-              'assets/images/PuzzelPixelStudioLaunch.png',
+              'assets/PuzzelPixelStudioLaunch.png',
               width: 200, // Adjust width as needed
             ),
             SizedBox(height: 24),
