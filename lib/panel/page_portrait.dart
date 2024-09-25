@@ -9,6 +9,7 @@ class PagePortrait extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final screenW = size.width * 0.8;
+    final screenH = size.height * 0.8;
 
     return SizedBox.expand(
       child: Container(
@@ -19,17 +20,35 @@ class PagePortrait extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center, // Center vertically
             crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
             children: <Widget>[
-              SizedBox(height: size.height * 0.05), // Height based on screen size
+             // Spacer(),
+            //  SizedBox(height: size.height * 0.01),
+              // The AboutController aligned at the top-right of the column
+              Align(
+                alignment: Alignment.topRight, // Align to the top-right of the column
+               // child: Padding(
+                //  padding: const EdgeInsets.all(16.0), // Add padding for positioning
+                  child: AboutController(),
+               // ),
+              ),
+             // AboutController(),
+             // Spacer(),
+            //  SizedBox(height: size.height * 0.01), // Height based on screen size
               _ScreenDecoration(
                 child: Screen(width: screenW),
               ),
-              SizedBox(height: size.height * 0.03), // Add vertical spacing based on screen size
+            // Spacer(),
+             //SizedBox(height: size.height * 0.01), // Add vertical spacing based on screen size
              // DonationButton(),
-              BottomActionBar(),
-              SizedBox(height: size.height * 0.05),
-              Flexible( // Use Flexible to adjust according to screen height
-                child: GameController(),
-              ),
+             //  Flexible(
+             //   child:
+                BottomActionBar(),
+      //  ),
+             // Spacer(),
+             // SizedBox(height: size.height * 0.01),
+             //  Flexible( // Use Flexible to adjust according to screen height
+             //    child:
+                GameController(),
+             // ),
             ],
             // children: <Widget>[
             //   Spacer(),

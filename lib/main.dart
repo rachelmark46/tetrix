@@ -57,24 +57,24 @@ class GamePage extends StatelessWidget {
           child: Game(
               child: KeyboardController(
                   child: land ? PageLand() : PagePortrait()))),
-      SizedBox(height: 15),
-      Positioned(
-        top: 16.0,
-        right: 16.0,
-        child: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertAbout(); // Show the AlertAbout widget
-              },
-            );
-          },
-          mini: true,
-          backgroundColor: Colors.red,
-          child: const Icon(Icons.info_outline_rounded),
-        ),
-      ),
+     // SizedBox(height: 10),
+     //  Positioned(
+     //    top: 15.0,
+     //    right: 15.0,
+     //    child: FloatingActionButton(
+     //      onPressed: () {
+     //        showDialog(
+     //          context: context,
+     //          builder: (BuildContext context) {
+     //            return AlertAbout(); // Show the AlertAbout widget
+     //          },
+     //        );
+     //      },
+     //      mini: true,
+     //      backgroundColor: Colors.red,
+     //      child: const Icon(Icons.info_outline_rounded),
+     //    ),
+     //  ),
 
       // ],
       //   )

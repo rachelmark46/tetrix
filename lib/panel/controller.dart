@@ -6,6 +6,8 @@ import 'package:tetrix/gamer/gamer.dart';
 import 'package:tetrix/panel/check_app.dart';
 import 'package:tetrix/panel/payment.dart';
 
+import 'about.dart';
+
 
 class GameController extends StatelessWidget {
   @override
@@ -21,6 +23,7 @@ class GameController extends StatelessWidget {
     );
   }
 }
+
 
 const Size _DIRECTION_BUTTON_SIZE = const Size(48, 48);
 
@@ -208,74 +211,19 @@ class DropButton extends StatelessWidget {
   }
 }
 
-class DonationButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.blueAccent, Colors.cyan],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 10,
-                offset: Offset(0, 3), // changes position of shadow
-              ),
-            ],
-          ),
-          child: ElevatedButton(
-            onPressed: () {
-              // Navigate to PaymentPage on button press
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => PaymentPage()),
-              // );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              shadowColor: Colors.transparent,
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.favorite, color: Colors.white),
-                SizedBox(width: 10),
-                Text(
-                  'Support Us!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class BottomActionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
+
+    //return Align(
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 16.0),
+      //  padding: EdgeInsets.only(bottom: screenHeight * 0.03),
+        padding: const EdgeInsets.only(bottom: 1.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -330,42 +278,9 @@ class BottomActionBar extends StatelessWidget {
                 ),
               ),
             ),
-            // // BuyMeACoffee Button
-            // const BuyMeACoffeeButton(
-            //   buyMeACoffeeName: "rachelmark",
-            //   color: BuyMeACoffeeColor.Green,
-            // ),
-            const SizedBox(height : 20),
-            // Custom Rectangular Banner Button
-            // GestureDetector(
-            //   onTap: () {
-            //     showDialog(
-            //       context: context,
-            //       builder: (BuildContext context) {
-            //         return ImageGrid();
-            //       },
-            //     );
-            //   },
-            //   child: Container(
-            //     width: 110, // Set the width of the banner button
-            //     height: 45, // Set the height of the banner button
-            //     decoration: BoxDecoration(
-            //       color: Colors.black, // Background color for the banner
-            //       borderRadius: BorderRadius.circular(12), // Rounded corners
-            //     ),
-            //
-            //     //     // Text inside the banner
-            //         child :Text(
-            //           'CHECK OTHER APPS  ',
-            //           style: TextStyle(
-            //             fontSize: 18,
-            //             fontWeight: FontWeight.bold,
-            //             color: Colors.white,
-            //           ),
-            //         ),
-            //
-            //     ),
-            //   ),
+            SizedBox(height: screenHeight * 0.01),
+            //const SizedBox(height : 20),
+
 
             Container(
               decoration: BoxDecoration(
@@ -393,13 +308,7 @@ class BottomActionBar extends StatelessWidget {
                     },
                   );
                 },
-                // onPressed: () {
-                //   // Navigate to PaymentPage on button press
-                //   Navigator.push(
-                //     context,
-                //     MaterialPageRoute(builder: (context) => PaymentPage()),
-                //   );
-                // },
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
@@ -411,8 +320,7 @@ class BottomActionBar extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    //Icon(Icons.favorite, color: Colors.white),
-                   // SizedBox(width: 10),
+
                     Text(
                       'CHECK OTHER APPS',
                       style: TextStyle(
@@ -450,6 +358,38 @@ class LeftController extends StatelessWidget {
     );
   }
 }
+
+
+class AboutController extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+     return
+    //   Container(
+    //   height :16,
+    //  width :16,
+     //child:
+      Positioned(
+        top: 14.0,
+        right: 14.0,
+        child: FloatingActionButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertAbout(); // Show the AlertAbout widget
+              },
+            );
+          },
+          mini: true,
+          backgroundColor: Colors.red,
+          child: const Icon(Icons.info_outline_rounded),
+       // ),
+      ),
+    );
+  }
+}
+
+
 
 class _Button extends StatefulWidget {
   final Size size;

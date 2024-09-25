@@ -11,8 +11,8 @@ class PageLand extends StatelessWidget {
     return SizedBox.expand(
       child: Container(
         color: BACKGROUND_COLOR,
-        child: Padding(
-          padding: MediaQuery.of(context).padding,
+       // child: Padding(
+         // padding: MediaQuery.of(context).padding,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
            // mainAxisSize: MainAxisSize.min,
@@ -35,17 +35,24 @@ class PageLand extends StatelessWidget {
                   ],
                 ),
               ),
-              _ScreenDecoration(child: Screen.fromHeight(height * 0.8)),
+              _ScreenDecoration(child: Screen.fromHeight(width * 0.4)),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
             children: <Widget>[
-              SizedBox(height: height * 0.03), // 3% of screen height
-              //DonationButton(),
+              SizedBox(height: height * 0.01),
+              Align(
+                alignment: Alignment.topRight, // Align to the top-right of the column
+                // child: Padding(
+                //  padding: const EdgeInsets.all(16.0), // Add padding for positioning
+                child: AboutController(),
+                // ),
+              ),// 3% of screen height
+              //AboutController(),
             // 5% of screen height
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.01),
               DirectionController(),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.01),
               BottomActionBar(),
              // SizedBox(height: height * 0.05), /// 5% of screen height
             ],
@@ -60,7 +67,7 @@ class PageLand extends StatelessWidget {
               ),
             ],
           ),
-        ),
+       // ),
       ),
     );
   }

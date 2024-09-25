@@ -4,7 +4,7 @@ import '../main.dart';
 
 
 class AlertAbout extends StatelessWidget {
-  static const String authorURL = "https://github.com/rachelmark46";
+  static const String authorURL = "https://www.ppixel.org/home";
   static const String releasesURL =
       "https://github.com/rachelmark46/tetrix";
   static const String sourceURL =
@@ -34,23 +34,23 @@ class AlertAbout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Image.asset('assets/icon/icon_round.png',
-              //   height: 48.0, width: 48.0, fit: BoxFit.contain),
-              Text(
-                '   Sudoku',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'roboto',
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-
-          SizedBox(height: 15),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     // Image.asset('assets/icon/icon_round.png',
+          //     //   height: 48.0, width: 48.0, fit: BoxFit.contain),
+          //     Text(
+          //       '   Sudoku',
+          //       style: TextStyle(
+          //           color: Colors.white,
+          //           fontFamily: 'roboto',
+          //           fontSize: 22,
+          //           fontWeight: FontWeight.bold),
+          //     ),
+          //   ],
+          // ),
+          //
+          // SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -80,7 +80,7 @@ class AlertAbout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Author: ',
+                'Website: ',
                 style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'roboto',
@@ -111,7 +111,7 @@ class AlertAbout extends StatelessWidget {
                     fontSize: 17),
               ),
               InkWell(
-                onTap: () => openURL(licenseURL),
+               // onTap: () => openURL(licenseURL),
                 child: Text(
                   'GNU GPLv3',
                   style: TextStyle(
