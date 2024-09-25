@@ -276,7 +276,7 @@ class BottomActionBar extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Padding(
         padding: const EdgeInsets.only(bottom: 16.0),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
 
@@ -335,37 +335,97 @@ class BottomActionBar extends StatelessWidget {
             //   buyMeACoffeeName: "rachelmark",
             //   color: BuyMeACoffeeColor.Green,
             // ),
-            const SizedBox(width: 20),
+            const SizedBox(height : 20),
             // Custom Rectangular Banner Button
-            GestureDetector(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return ImageGrid();
-                  },
-                );
-              },
-              child: Container(
-                width: 110, // Set the width of the banner button
-                height: 45, // Set the height of the banner button
-                decoration: BoxDecoration(
-                  color: Colors.black, // Background color for the banner
-                  borderRadius: BorderRadius.circular(12), // Rounded corners
-                ),
+            // GestureDetector(
+            //   onTap: () {
+            //     showDialog(
+            //       context: context,
+            //       builder: (BuildContext context) {
+            //         return ImageGrid();
+            //       },
+            //     );
+            //   },
+            //   child: Container(
+            //     width: 110, // Set the width of the banner button
+            //     height: 45, // Set the height of the banner button
+            //     decoration: BoxDecoration(
+            //       color: Colors.black, // Background color for the banner
+            //       borderRadius: BorderRadius.circular(12), // Rounded corners
+            //     ),
+            //
+            //     //     // Text inside the banner
+            //         child :Text(
+            //           'CHECK OTHER APPS  ',
+            //           style: TextStyle(
+            //             fontSize: 18,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.white,
+            //           ),
+            //         ),
+            //
+            //     ),
+            //   ),
 
-                //     // Text inside the banner
-                    child :Text(
-                      'CHECK OTHER APPS  ',
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.blueAccent, Colors.cyan],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 10,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return ImageGrid();
+                    },
+                  );
+                },
+                // onPressed: () {
+                //   // Navigate to PaymentPage on button press
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => PaymentPage()),
+                //   );
+                // },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //Icon(Icons.favorite, color: Colors.white),
+                   // SizedBox(width: 10),
+                    Text(
+                      'CHECK OTHER APPS',
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                         color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-
+                  ],
                 ),
               ),
+            ),
+
 
           ],
         ),
@@ -487,7 +547,7 @@ class _Description extends StatelessWidget {
       child: widget,
       style: textStyle ??
           TextStyle(
-              fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 13, fontWeight: FontWeight.bold, color: Colors.black),
     );
   }
 }
