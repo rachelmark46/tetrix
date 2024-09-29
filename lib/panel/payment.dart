@@ -27,21 +27,21 @@ import 'package:flutter_donation_buttons/donationButtons/buyMeACoffeeButton.dart
                   child: Column(
                     children: [
                       Text(
-                        'Help Us Help You',
+                        'Help Us Help Others',
                         style: TextStyle(
-                          fontSize: 26,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Your generous donations help us continue developing apps that make your life easier. '
+                        'Your generous donations help us continue developing apps. '
                             'With your support, we can work more efficiently to build better features and improve the quality of our apps. '
                             'Every little contribution makes a huge difference. Thank you for being part of our journey!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.grey[700],
                         ),
@@ -53,6 +53,7 @@ import 'package:flutter_donation_buttons/donationButtons/buyMeACoffeeButton.dart
                 SizedBox(height: 20),
                 // BuyMeACoffee Button
                 const BuyMeACoffeeButton(
+                  text: "Continue..",
                   buyMeACoffeeName: "rachelmark",
                   color: BuyMeACoffeeColor.Green,
                 ),

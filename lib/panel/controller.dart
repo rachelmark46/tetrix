@@ -25,9 +25,9 @@ class GameController extends StatelessWidget {
 }
 
 
-const Size _DIRECTION_BUTTON_SIZE = const Size(48, 48);
+const Size _DIRECTION_BUTTON_SIZE = const Size(45, 45);
 
-const Size _SYSTEM_BUTTON_SIZE = const Size(28, 28);
+const Size _SYSTEM_BUTTON_SIZE = const Size(22, 22);
 
 const double _DIRECTION_SPACE = 16;
 
@@ -154,7 +154,7 @@ class SystemButtonGroup extends StatelessWidget {
       children: <Widget>[
         _Description(
           //text: S.of(context).sounds,
-          text: 'SOUNDS',
+          text: 'SOUND ',
           child: _Button(
               size: _SYSTEM_BUTTON_SIZE,
               color: _systemButtonColor,
@@ -176,11 +176,11 @@ class SystemButtonGroup extends StatelessWidget {
         ),
         _Description(
           //text: S.of(context).reset,
-          text: 'RESET',
+          text: ' RESET',
           child: _Button(
               size: _SYSTEM_BUTTON_SIZE,
               enableLongPress: false,
-              color: Colors.red,
+              color: Colors.green,
               onTap: () {
                 Game.of(context).reset();
               }),
@@ -197,7 +197,7 @@ class DropButton extends StatelessWidget {
       text: 'DROP',
       child: _Button(
         enableLongPress: false,
-        size: Size(90, 90),
+        size: Size(80, 80),
         onTap: () {
           Game.of(context).drop();
         },
@@ -264,12 +264,12 @@ class BottomActionBar extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.favorite, color: Colors.white),
-                    SizedBox(width: 10),
+                    Icon(Icons.favorite, color: Colors.red),
+                    SizedBox(width: 8),
                     Text(
                       'Support Us!',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
@@ -324,7 +324,7 @@ class BottomActionBar extends StatelessWidget {
                     Text(
                       'CHECK OTHER APPS',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
