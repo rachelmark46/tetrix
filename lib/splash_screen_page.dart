@@ -38,18 +38,21 @@ class SplashScreenPageState extends State<SplashScreenPage> {
             ),
             SizedBox(height: 24),
                     Text(
-                      '\nTETRIS ',
+                      '\nTETRIX ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25.0,
                           color: Colors.white),
                     ),
-            SizedBox(height: 24), // Spacer
+            SizedBox(height: 20), // Spacer
             // Loading text
             Text(
               'Rachel Mark',
               style: TextStyle(color: Colors.white),
-            ),
+            ),Text(
+              'www.ppixel.org',
+              style: TextStyle(color: Colors.pink),
+            )
           ],
         ),
       ),
