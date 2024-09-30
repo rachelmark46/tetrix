@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tetrix/gamer/gamer.dart';
 import 'package:tetrix/material/audios.dart';
 import 'package:tetrix/panel/about.dart';
@@ -48,6 +49,10 @@ class GamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //only Android/iOS support land mode
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     bool land = MediaQuery.of(context).orientation == Orientation.landscape;
     // return land ? PageLand() : PagePortrait();
     return Scaffold(
