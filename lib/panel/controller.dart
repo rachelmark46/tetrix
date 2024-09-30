@@ -9,21 +9,45 @@ import 'package:tetrix/panel/payment.dart';
 import 'about.dart';
 
 
+// class GameController extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       height: 200,
+//       child: Row(
+//         children: <Widget>[
+//           Expanded(child:
+//           LeftController()),
+//           Expanded(child: DirectionController()),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
 class GameController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Get device height
+    double deviceHeight = MediaQuery.of(context).size.height;
+
     return SizedBox(
-      height: 200,
+      height: deviceHeight * 0.3, // Set height relative to device height (30% of device height)
       child: Row(
         children: <Widget>[
-          Expanded(child: LeftController()),
-          Expanded(child: DirectionController()),
+          Flexible(
+            flex: 1,
+            child: LeftController(),
+          ),
+          Flexible(
+            flex: 1,
+            child: DirectionController(),
+          ),
         ],
       ),
     );
   }
 }
-
 
 const Size _DIRECTION_BUTTON_SIZE = const Size(45, 45);
 
@@ -180,7 +204,7 @@ class SystemButtonGroup extends StatelessWidget {
           child: _Button(
               size: _SYSTEM_BUTTON_SIZE,
               enableLongPress: false,
-              color: Colors.green,
+              color: Colors.redAccent,
               onTap: () {
                 Game.of(context).reset();
               }),
@@ -349,46 +373,74 @@ class LeftController extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         SystemButtonGroup(),
-        Expanded(
-          child: Center(
+       // Expanded(
+
+         // child:
+          Center(
             child: DropButton(),
           ),
-        )
+      //  )
       ],
     );
   }
 }
 
+//
+// class AboutController extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//      return
+//     //   Container(
+//     //   height :16,
+//     //  width :16,
+//      //child:
+//       Positioned(
+//         top: 14.0,
+//         right: 14.0,
+//         child: FloatingActionButton(
+//           onPressed: () {
+//             showDialog(
+//               context: context,
+//               builder: (BuildContext context) {
+//                 return AlertAbout(); // Show the AlertAbout widget
+//               },
+//             );
+//           },
+//           mini: true,
+//           backgroundColor: Colors.red,
+//           child: const Icon(Icons.info_outline_rounded),
+//        // ),
+//       ),
+//     );
+//   }
+// }
 
 class AboutController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return
-    //   Container(
-    //   height :16,
-    //  width :16,
-     //child:
-      Positioned(
-        top: 14.0,
-        right: 14.0,
-        child: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertAbout(); // Show the AlertAbout widget
-              },
-            );
-          },
-          mini: true,
-          backgroundColor: Colors.red,
-          child: const Icon(Icons.info_outline_rounded),
-       // ),
-      ),
+    return Stack(
+      children: [
+        Positioned(
+          top: 14.0,
+          right: 14.0,
+          child: FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertAbout(); // Show the AlertAbout widget
+                },
+              );
+            },
+            mini: true,
+            backgroundColor: Colors.red,
+            child: const Icon(Icons.info_outline_rounded),
+          ),
+        ),
+      ],
     );
   }
 }
-
 
 
 class _Button extends StatefulWidget {

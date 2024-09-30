@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tetrix/gamer/gamer.dart';
 import 'package:tetrix/material/audios.dart';
 import 'package:tetrix/panel/about.dart';
+import 'package:tetrix/panel/page_land.dart';
 import 'package:tetrix/panel/page_portrait.dart';
 import 'package:tetrix/splash_screen_page.dart';
 import 'gamer/keyboard.dart';
@@ -50,10 +51,10 @@ class GamePage extends StatelessWidget {
     bool land = MediaQuery.of(context).orientation == Orientation.landscape;
     // return land ? PageLand() : PagePortrait();
     return Scaffold(
-        body: Stack(children: [
-
-
-      Sound(
+        body: Stack(
+            fit: StackFit.expand, // StackFit.expand fixes the issue
+            children: [
+              Sound(
           child: Game(
               child: KeyboardController(
                   child: land ? PageLand() : PagePortrait()))),

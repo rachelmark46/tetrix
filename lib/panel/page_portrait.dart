@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tetrix/main.dart';
 import 'package:tetrix/panel/controller.dart';
 import 'package:tetrix/panel/screen.dart';
-part 'page_land.dart';
 
 class PagePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final screenW = size.width * 0.8;
-    final screenH = size.height * 0.8;
+   // final screenH = size.height * 0.8;
 
     return SizedBox.expand(
       child: Container(
@@ -20,6 +19,7 @@ class PagePortrait extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center, // Center vertically
             crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
             children: <Widget>[
+              Flexible(child:
              // Spacer(),
             //  SizedBox(height: size.height * 0.01),
               // The AboutController aligned at the top-right of the column
@@ -29,6 +29,7 @@ class PagePortrait extends StatelessWidget {
                 //  padding: const EdgeInsets.all(16.0), // Add padding for positioning
                   child: AboutController(),
                // ),
+              ),
               ),
              // AboutController(),
              // Spacer(),
